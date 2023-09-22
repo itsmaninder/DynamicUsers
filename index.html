@@ -24,10 +24,10 @@
         .then((data) => {
           console.log(data);
 
-          const cocktailDivMain = document.createElement("div");
+          const mainDiv = document.createElement("div");
           const body = document.getElementById("body");
-          cocktailDivMain.setAttribute("id", "wrap");
-          body.appendChild(cocktailDivMain);
+          mainDiv.setAttribute("id", "wrap");
+          body.appendChild(mainDiv);
           displayCocktail(data);
         })
         .catch((error) => console.error("FETCH ERROR:", error));

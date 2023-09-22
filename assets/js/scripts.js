@@ -1,33 +1,31 @@
 function displayCocktail(data) {
   const dataVal = data.results;
-  const cocktailDiv = document.getElementById("wrap");
+  const divWrap = document.getElementById("wrap");
 
-  let limit = 10;
-  let count = 0;
   for (let key in dataVal) {
     let value = dataVal[key];
     //image
     let image = document.createElement("img");
     image.setAttribute("src", value.picture.large);
-    cocktailDiv.appendChild(image);
+    divWrap.appendChild(image);
     //name
     let name = document.createElement("h3");
     name.innerHTML = `Hey I'm ` + value.name.first + " " + value.name.last;
-    cocktailDiv.appendChild(name);
+    divWrap.appendChild(name);
     //address
     let addr = document.createElement("p");
     addr.innerHTML = value.location.city + ", " + value.location.state;
-    cocktailDiv.appendChild(addr);
+    divWrap.appendChild(addr);
     //email
     let email = document.createElement("a");
     email.setAttribute("href", `mailto:value.email`);
     email.innerHTML = "<b>Email me</b> : " + value.email;
-    cocktailDiv.appendChild(email);
+    divWrap.appendChild(email);
     //phone
     let phone = document.createElement("a");
     phone.setAttribute("href", `tel:value.phone`);
     phone.innerHTML = "<b>Call On</b> : " + value.phone;
-    cocktailDiv.appendChild(phone);
+    divWrap.appendChild(phone);
   }
 }
 
