@@ -8,13 +8,24 @@ function displayCocktail(data) {
     let image = document.createElement("img");
     image.setAttribute("src", value.picture.large);
     divWrap.appendChild(image);
+    //sub
+    let sub = document.createElement("p");
+    sub.innerHTML = value.nat;
+    divWrap.appendChild(sub);
     //name
     let name = document.createElement("h3");
     name.innerHTML = `Hey I'm ` + value.name.first + " " + value.name.last;
     divWrap.appendChild(name);
     //address
     let addr = document.createElement("p");
-    addr.innerHTML = value.location.city + ", " + value.location.state;
+    addr.innerHTML =
+      "<b>" +
+      value.location.city +
+      ", " +
+      value.location.state +
+      "<br/>" +
+      value.location.country +
+      "</b>";
     divWrap.appendChild(addr);
     //email
     let email = document.createElement("a");
@@ -48,5 +59,5 @@ function randColor() {
     hex(rg(1, 15))
   );
 }
-const bg = document.getElementById("overlay");
-bg.style.background = randColor();
+const bg = document.getElementById("body");
+bg.style.setProperty('--color', randColor());
