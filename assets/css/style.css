@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kalam&family=Montserrat&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) all;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 body {
   display: flex;
@@ -17,9 +17,14 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 420px;
+  height: 520px;
   z-index: -1;
+  border-radius: 4rem 0 4rem 0;
+  box-shadow: 0 10px 40px #999999;
 }
 #wrap {
   width: 500px;
@@ -39,7 +44,7 @@ body {
   margin: 0;
   font-size: 1.875rem;
   text-transform: capitalize;
-  font-family: 'Kalam', cursive;
+  font-family: "Kalam", cursive;
 }
 #wrap p {
   margin: 0;
@@ -50,7 +55,7 @@ body {
 #wrap img {
   width: 200px;
   height: 200px;
-  border: 10px solid rgba(255, 255, 255, 50%);
+  border: 6px solid rgba(255, 255, 255, 50%);
   border-radius: 3rem 0 3rem 0;
   margin: 0;
   box-shadow: 0 0 30px rgba(255, 255, 255, 50%);
@@ -76,8 +81,6 @@ body {
   font-size: 1rem;
   font-weight: 500;
   justify-content: center;
-  
-
 }
 #wrap a:hover {
   text-decoration: underline;
