@@ -18,14 +18,11 @@ function displayCocktail(data) {
     divWrap.appendChild(name);
     //address
     let addr = document.createElement("p");
-    addr.innerHTML =
-      "<b>" +
-      value.location.city +
+    addr.innerHTML =value.location.city +
       ", " +
       value.location.state +
       "<br/>" +
-      value.location.country +
-      "</b>";
+      value.location.country;
     divWrap.appendChild(addr);
     //email
     let email = document.createElement("a");
