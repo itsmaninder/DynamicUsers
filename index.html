@@ -13,40 +13,5 @@
   </head>
   <body id="body">
     <script src="./assets/js/scripts.js"></script>
-    <script>
-      const loader = document.createElement("div");
-      loader.setAttribute("class", "loader");
-      
-      const body = document.getElementById("body");
-      body.appendChild(loader);
-      fetch("https://randomuser.me/api/")
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw new Error("NETWORK RESPONSE ERROR");
-          }
-        })
-        .then((data) => {
-          console.log(data);
-
-          body.removeChild(loader);
-
-          const mainDiv = document.createElement("div");
-
-          mainDiv.setAttribute("id", "wrap");
-          body.appendChild(mainDiv);
-          displayCocktail(data);
-        })
-        .catch((error) => {
-          //  Remove the loader in case of an error
-          body.removeChild(loader);
-          console.error("FETCH ERROR:", error);
-        });
-
-      setTimeout(function () {
-        window.location.reload(1);
-      }, 5000);
-    </script>
   </body>
 </html>
