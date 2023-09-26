@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Refresh" content="100" />
     <title>Dynamic Users</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body id="body">
-    <div id="overlay"></div>
     <script src="./assets/js/scripts.js"></script>
     <script>
-      //fetch("https://api.publicapis.org/entries")
-      //fetch("http://universities.hipolabs.com/search?country=United+States")
+      const loader = document.createElement("div");
+      loader.setAttribute("class", "loader");
+      
+      const body = document.getElementById("body");
+      body.appendChild(loader);
       fetch("https://randomuser.me/api/")
         .then((response) => {
           if (response.ok) {
@@ -24,13 +30,19 @@
         .then((data) => {
           console.log(data);
 
+          body.removeChild(loader);
+
           const mainDiv = document.createElement("div");
-          const body = document.getElementById("body");
+
           mainDiv.setAttribute("id", "wrap");
           body.appendChild(mainDiv);
           displayCocktail(data);
         })
-        .catch((error) => console.error("FETCH ERROR:", error));
+        .catch((error) => {
+          //  Remove the loader in case of an error
+          body.removeChild(loader);
+          console.error("FETCH ERROR:", error);
+        });
 
       setTimeout(function () {
         window.location.reload(1);
