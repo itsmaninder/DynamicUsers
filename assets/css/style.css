@@ -14,15 +14,20 @@ body {
   background-color: #eeeeff;
 }
 body:before {
-  content: '';
+  content: "";
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   position: fixed;
   z-index: -1;
-  background-color: var(--color);
-  opacity: 0.1;
+  background: radial-gradient(
+    circle,
+    var(--color),
+    200px,
+    rgba(255, 255, 255, 0.8)
+  );
+  opacity: 1;
 }
 .loader {
   width: 60px;
@@ -51,32 +56,38 @@ body:before {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
-  border-radius: 1.5rem;
+  z-index: 1;
+  border-radius: 2.5rem;
   opacity: 1;
-  transform: rotate(-10deg);
+  transform: rotate(-8deg);
   transition: transform 0.5s ease;
 }
 .item {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+  border-radius: 2.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 30px -20px #313131;
+  border: 1px solid var(--color);
 }
 .item-head {
-  flex: 0 0 250px;
   position: relative;
-  width: 250px;
-  height: 250px;
 }
 .item:hover .item-head:before {
-  transform: rotate(10deg);
+  transform: rotate(8deg);
 }
 .item-head img {
-  width: 250px;
-  min-width: 250px;
-  border-radius: 1.5rem;
+  width: 200px;
+  min-width: 200px;
+  margin: auto;
+  border-radius: 2.5rem;
   aspect-ratio: 1/1;
   box-shadow: 0 0 40px -20px #000;
+  position: relative;
+  z-index: 2;
   background-color: var(--color);
 }
 .item:hover .item-body > * {
@@ -93,35 +104,27 @@ body:before {
 .item-body i {
   width: 1.875rem;
 }
-.item-body > * {
-  opacity: 0;
-  transform: translateY(50%);
-  transition: transform 0.5s ease-in-out;
-}
+
 .item-body h3 {
-  position: absolute;
-  top: -5.75rem;
-  left: 1rem;
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.875rem;
   text-transform: capitalize;
-  color: #fff;
   font-weight: 600;
+  color: var(--color);
   opacity: 1;
-  transform: translateY(0%);
-  text-shadow: 0 2px 5px #00000060;
+  text-shadow: 1px 1px 15px rgba(68, 68, 68, 0.25);
 }
 
 .item-body p {
   margin: 0;
   color: currentColor;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .item-body a {
   color: currentColor;
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 .item-body a:hover {
   color: var(--color);
