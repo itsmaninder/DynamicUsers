@@ -106,6 +106,6 @@ fetch("https://randomuser.me/api/")
     console.error("FETCH ERROR:", error);
   });
 
-setTimeout(function() {
-  history.go(0);
-}, 5000);
+// setTimeout(function() {
+//   history.go(0);
+// }, 5000);

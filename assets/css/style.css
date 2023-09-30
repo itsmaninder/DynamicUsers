@@ -27,6 +27,7 @@ body:before {
     200px,
     rgba(255, 255, 255, 0.8)
   );
+  /* background-color: var(--color); */
   opacity: 1;
 }
 .loader {
@@ -61,6 +62,7 @@ body:before {
   opacity: 1;
   transform: rotate(-8deg);
   transition: transform 0.5s ease;
+  opacity: 0.5;
 }
 .item {
   display: flex;
@@ -71,7 +73,7 @@ body:before {
   border-radius: 2.5rem;
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 30px -20px #313131;
-  border: 1px solid var(--color);
+  /* border: 1px solid var(--color); */
 }
 .item-head {
   position: relative;
@@ -107,11 +109,12 @@ body:before {
 
 .item-body h3 {
   margin: 0;
-  font-size: 1.875rem;
+  font-size: 2.25rem;
   text-transform: capitalize;
   font-weight: 600;
-  color: var(--color);
+  color: #fff;
   opacity: 1;
+  -webkit-text-stroke: 1.5px var(--color);
   text-shadow: 1px 1px 15px rgba(68, 68, 68, 0.25);
 }
 
